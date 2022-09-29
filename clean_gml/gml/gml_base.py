@@ -2,9 +2,9 @@ import os
 import re
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
-from gml_cleaner.namespace import namespaces
-from gml_cleaner.utils import get_file_split
-from gml_cleaner.find_meta import find_meta_file
+from clean_gml.namespace import namespaces
+from clean_gml.utils import get_file_split
+from clean_gml.find_meta import find_meta_file
 
 
 class GmlBase:

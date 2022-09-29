@@ -1,5 +1,5 @@
 from . gml_base import GmlBase
-from gml_cleaner.utils import get_file_split
+from clean_gml.utils import get_file_split
 
 
 floats = ['xsd:float', 'xsd:decimal', 'double', 'Real']

@@ -13,9 +13,9 @@ pip install gml-cleaner
 ```
 
 # Usage
-```python
-from gml_cleaner.gml import Gml
 
+```python
+from clean_gml.gml import Gml
 
 # set example file path
 filepath = 'example.gml'
