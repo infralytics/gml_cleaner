@@ -8,7 +8,7 @@ setup(
     name='GML cleaner',
     license='MIT',
     license_files='LICENSE.txt',
-    description='Gml cleaner is a python library for manupulating data and meta data.',
+    description='Gml cleaner is a python library for manupulating data and meta data in gml files.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     version='1.1',
