@@ -11,7 +11,7 @@ setup(
     description='Gml cleaner is a python library for manupulating data and meta data in gml files.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    version='1.1',
+    version='1.2',
     url='https://github.com/infralytics/gml_cleaner',
     author='Wouter van Riel',
     author_email='wouter.van.riel@infralytics.org',
