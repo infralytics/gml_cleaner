@@ -23,7 +23,7 @@ class Gml(GmlBase):
     def replace_commas(self, ndigits: int = 2):
 
         g = namespaces.get('g')
-        params = [f'{{{g}}}{p}' for p in self.schema.get_parameters_floats_xsd()]
+        params = [f'{{{g}}}{p}' for p in self.schema.get_parameters_floats()]
 
         for n in self.root.iter(f'{{{g}}}PROPERTIES'):
             for item in n.iter():

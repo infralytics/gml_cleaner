@@ -27,7 +27,7 @@ class GmlSchema(GmlBase):
                 break
 
     def get_parameters_floats_xsd(self):
-        return [child.attrib for child in self.root.iter() if 'element' in child.tag and child.attrib['type'] in floats]
+        return [child.attrib['name'] for child in self.root.iter() if 'element' in child.tag and child.attrib['type'] in floats]
 
     def get_parameters_floats(self):
         _, _, extension = get_file_split(self.file)
