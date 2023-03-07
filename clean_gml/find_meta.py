@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 
 def find_meta_file(gml_file: str = None) -> str | None:
@@ -8,14 +9,15 @@ def find_meta_file(gml_file: str = None) -> str | None:
     :return: meta_file: file path to meta file or None if not found
     """
 
-    dirname = os.path.dirname(gml_file)
-    basename = os.path.basename(gml_file)
-    basename_no_ext = os.path.splitext(basename)[0]
+    dirname = Path(gml_file).parent
 
-    files_temp = [filename for filename in os.listdir(dirname) if filename.lower().startswith(basename_no_ext.lower()) and filename != basename]
-    if files_temp:
-        meta_file = os.path.join(dirname, files_temp[0])
-    else:
-        meta_file = None
+    suffixes = ['.xsd', '.XSD', '.gfs', '.GFS']
+    for suffix in suffixes:
+        meta_file = Path(dirname, Path(gml_file).stem).with_suffix(suffix)
+        if meta_file.exists():
+            return str(meta_file)
 
-    return meta_file
+        continue
+
+    return None
+
