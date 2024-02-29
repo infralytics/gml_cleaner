@@ -37,7 +37,10 @@ class GmlBase:
 
         _, _, extension = get_file_split(self.file)
 
-        xmlstr = minidom.parseString(ET.tostring(self.root)).toprettyxml()
+        if extension == '.xsd':
+            xmlstr = minidom.parseString(ET.tostring(self.root)).toprettyxml(newl='')
+        else:
+            xmlstr = minidom.parseString(ET.tostring(self.root)).toprettyxml()
 
         if extension == '.gfs':
             xmlstr = xmlstr.replace('<?xml version="1.0" ?>', '')
